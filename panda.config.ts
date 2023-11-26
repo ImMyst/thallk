@@ -5,7 +5,10 @@ export default defineConfig({
   preflight: true,
 
   // Where to look for your css declarations
-  include: ['./src/**/*.{ts,tsx,js,jsx,astro}', './pages/**/*.{ts,tsx,js,jsx,astro}'],
+  include: [
+    "./src/**/*.{ts,tsx,js,jsx,astro}",
+    "./pages/**/*.{ts,tsx,js,jsx,astro}",
+  ],
 
   // Files to exclude
   exclude: [],
@@ -15,9 +18,13 @@ export default defineConfig({
     extend: {
       tokens: {
         fonts: {
-          nohemi: { value: 'var(--font-nohemi), sans-serif' },
-        }
-      }
+          nohemi: { value: "var(--font-nohemi), sans-serif" },
+        },
+        colors: {
+          primary: { value: "#50CC8F" },
+          secondary: { value: "#272727" },
+        },
+      },
     },
   },
 

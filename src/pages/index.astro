@@ -16,7 +16,7 @@ const posts = await getCollection('posts');
       <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
       below to view a post in the collection.
     </p>
-    <h2 class={css({fontWeight: 800, color: '#50CC8F'})}>Posts</h2>
+    <h2 class={css({fontWeight: 800, color: 'primary'})}>Posts</h2>
     <ul>
       {
         posts.map(post => (
