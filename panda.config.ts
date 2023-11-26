@@ -12,7 +12,13 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      tokens: {
+        fonts: {
+          nohemi: { value: 'var(--font-nohemi), sans-serif' },
+        }
+      }
+    },
   },
 
   // The output directory for your css system
