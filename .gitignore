@@ -6,6 +6,10 @@ node_modules
 # Astro
 .astro
 
+# Panda
+styled-system
+panda
+
 # Production
 /build
 

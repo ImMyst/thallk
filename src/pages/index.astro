@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import { css } from '../../styled-system/css';
 
 const posts = await getCollection('posts');
 ---
@@ -15,7 +16,7 @@ const posts = await getCollection('posts');
       <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
       below to view a post in the collection.
     </p>
-    <h2>Posts</h2>
+    <h2 class={css({color: '#50CC8F'})}>Posts</h2>
     <ul>
       {
         posts.map(post => (
