@@ -1,21 +1,36 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
-import { css } from '../../styled-system/css';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import { css } from "../../styled-system/css";
 
-const posts = await getCollection('posts');
+const posts = await getCollection("posts");
 ---
 
 <Layout title="Thallk. - Let's thallk about metal music and more">
-  <div class={css({w: 'full', display: 'flex', flexDirection: 'column', alignItems: 'center'})}>
-    <h1 class={css({fontSize: '9xl', 'boxSizing': 'border-box', fontWeight: 'black'})}>Thallk<span class={css({color: 'primary'})}>.</span></h1>
-    <h2 class={css({fontSize: '2xl', lineClamp: 2})}>
+  <div
+    class={css({
+      w: "full",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    })}
+  >
+    <h1
+      class={css({
+        fontSize: "9xl",
+        boxSizing: "border-box",
+        fontWeight: "black",
+      })}
+    >
+      Thallk<span class={css({ color: "primary" })}>.</span>
+    </h1>
+    <h2 class={css({ fontSize: "2xl", lineClamp: 2 })}>
       Let’s thallk about metal music and more ...
     </h2>
-    <p class={css({fontWeight: 800, color: 'primary'})}>Posts</p>
+    <p class={css({ fontWeight: 800, color: "primary" })}>Posts</p>
     <ul>
       {
-        posts.map(post => (
+        posts.map((post) => (
           <li>
             <a href={`/posts/${post.slug}`}>{post.data.title}</a>
           </li>
