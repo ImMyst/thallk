@@ -6,17 +6,13 @@ import { css } from '../../styled-system/css';
 const posts = await getCollection('posts');
 ---
 
-<Layout title="Keystatic & Astro's Content Collections">
-  <div>
-    <h1>Keystatic ⚡️ + Astro 🚀</h1>
-    <p>
-      This homepage shows how to load data from Astro's content collections.
-    </p>
-    <p>
-      <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
-      below to view a post in the collection.
-    </p>
-    <h2 class={css({fontWeight: 800, color: 'primary'})}>Posts</h2>
+<Layout title="Thallk. - Let's thallk about metal music and more">
+  <div class={css({w: 'full', display: 'flex', flexDirection: 'column', alignItems: 'center'})}>
+    <h1 class={css({fontSize: '9xl', 'boxSizing': 'border-box', fontWeight: 'black'})}>Thallk<span class={css({color: 'primary'})}>.</span></h1>
+    <h2 class={css({fontSize: '2xl', lineClamp: 2})}>
+      Let’s thallk about metal music and more ...
+    </h2>
+    <p class={css({fontWeight: 800, color: 'primary'})}>Posts</p>
     <ul>
       {
         posts.map(post => (
