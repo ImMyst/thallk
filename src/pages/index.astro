@@ -1,14 +1,16 @@
 ---
 import { getCollection } from "astro:content";
+import Title from "../components/Title";
 import Layout from "../layouts/Layout.astro";
 import { css } from "../../styled-system/css";
+import { Box } from "../../styled-system/jsx";
 
 const posts = await getCollection("posts");
 ---
 
 <Layout title="Thallk. - Let's thallk about metal music and more">
-  <div
-    class={css({
+  <Box
+    className={css({
       w: "full",
       display: "flex",
       flexDirection: "column",
@@ -22,7 +24,13 @@ const posts = await getCollection("posts");
         fontWeight: "black",
       })}
     >
-      Thallk<span class={css({ color: "primary" })}>.</span>
+      {
+        (
+          <Title>
+            Thallk<span class={css({ color: "primary" })}>.</span>
+          </Title>
+        )
+      }
     </h1>
     <h2 class={css({ fontSize: "2xl", lineClamp: 2 })}>
       Let’s thallk about metal music and more ...
@@ -37,5 +45,5 @@ const posts = await getCollection("posts");
         ))
       }
     </ul>
-  </div>
+  </Box>
 </Layout>

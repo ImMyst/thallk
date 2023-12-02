@@ -4,14 +4,9 @@
   "license": "MIT",
   "dependencies": {
     "@astrojs/markdoc": "^0.5.0",
-    "@astrojs/react": "^3.0.0",
     "@keystatic/astro": "^2.0.0",
     "@keystatic/core": "^0.2.0",
-    "@types/react": "^18.2.8",
-    "@types/react-dom": "^18.0.11",
-    "astro": "^3.0.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "astro": "^3.0.3"
   },
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
@@ -23,9 +18,14 @@
     "astro": "astro"
   },
   "devDependencies": {
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.0.11",
+    "@astrojs/react": "^3.0.0",
     "@pandacss/astro": "^0.19.0",
     "@pandacss/dev": "^0.19.0",
     "eslint": "^8.54.0",
-    "prettier-plugin-astro": "^0.12.2"
+    "prettier-plugin-astro": "^0.12.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
