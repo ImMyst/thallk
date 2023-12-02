@@ -23,7 +23,10 @@ export default defineConfig({
         },
         colors: {
           primary: { value: "#50CC8F" },
+          "primary-text": { value: "#345445" },
           secondary: { value: "#272727" },
+          "post-background": { value: "#313131" },
+          "post-background-hover": { value: "#353535" },
         },
       },
     },

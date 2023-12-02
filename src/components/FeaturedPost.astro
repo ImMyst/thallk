@@ -1,0 +1,39 @@
+---
+import { Box } from "../../styled-system/jsx";
+import { css } from "../../styled-system/css";
+import { capitalize } from "../utils/capitalize";
+import Tag from "./Tag.astro";
+import type { Post } from "../content/config";
+
+interface Props {
+  post?: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<Box
+  className={css({
+    display: "flex",
+    pos: "relative",
+    minW: "1/6",
+    _hover: {
+      bg: "post-background-hover",
+    },
+    alignItems: "center",
+    bg: "post-background",
+    p: "4",
+  })}
+>
+  <h3
+    class={css({
+      fontSize: "2xl",
+      maxW: "4/6",
+    })}
+  >
+    {post?.data.title}
+  </h3>
+  <Tag>
+    {capitalize(post?.data.tags.find((tag) => tag.includes("featured")))}
+  </Tag>
+</Box>

@@ -1,0 +1,21 @@
+---
+import { css } from "../../styled-system/css";
+import { Box } from "../../styled-system/jsx";
+---
+
+<Box
+  className={css({
+    px: "4",
+    pos: "absolute",
+    py: "1",
+    color: "primary-text",
+    fontSize: "1.125rem",
+    borderRadius: 0,
+    bg: "primary",
+    display: "flex",
+    right: 3,
+    top: 3,
+  })}
+>
+  <slot />
+</Box>

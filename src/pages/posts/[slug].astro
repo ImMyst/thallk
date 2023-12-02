@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import Container from "../../components/Container.astro";
 
 const { slug } = Astro.params;
 if (!slug) throw new Error("Slug not found");
@@ -17,6 +18,8 @@ export async function getStaticPaths() {
 ---
 
 <Layout title={post.data.title}>
-  <h1>{post.data.title}</h1>
-  <Content />
+  <Container>
+    <h1>{post.data.title}</h1>
+    <Content />
+  </Container>
 </Layout>

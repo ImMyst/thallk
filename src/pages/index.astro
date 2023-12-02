@@ -1,11 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-import Container from "../components/Container";
+import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
 import { css } from "../../styled-system/css";
 import { Box } from "../../styled-system/jsx";
+import FeaturedPost from "../components/FeaturedPost.astro";
 
 const posts = await getCollection("posts");
+const featuredPost = posts.find((post) => post.data.tags.includes("featured"));
 ---
 
 <Layout title="Thallk. - Let's thallk about metal music and more">
@@ -40,16 +42,15 @@ const posts = await getCollection("posts");
       >
         Let’s thallk about metal music and more ...
       </h2>
+      <Box
+        className={css({
+          pt: "14",
+        })}
+      >
+        <a href={`/posts/${featuredPost?.slug}`}>
+          <FeaturedPost post={featuredPost} />
+        </a>
+      </Box>
     </Box>
-    <p class={css({ fontWeight: 800, color: "primary" })}>Posts</p>
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
   </Container>
 </Layout>
