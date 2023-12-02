@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Title from "../components/Title";
+import Container from "../components/Container";
 import Layout from "../layouts/Layout.astro";
 import { css } from "../../styled-system/css";
 import { Box } from "../../styled-system/jsx";
@@ -9,32 +9,38 @@ const posts = await getCollection("posts");
 ---
 
 <Layout title="Thallk. - Let's thallk about metal music and more">
-  <Box
-    className={css({
-      w: "full",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    })}
-  >
-    <h1
-      class={css({
-        fontSize: "9xl",
-        boxSizing: "border-box",
-        fontWeight: "black",
+  <Container>
+    <Box
+      className={css({
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       })}
     >
-      {
-        (
-          <Title>
-            Thallk<span class={css({ color: "primary" })}>.</span>
-          </Title>
-        )
-      }
-    </h1>
-    <h2 class={css({ fontSize: "2xl", lineClamp: 2 })}>
-      Let’s thallk about metal music and more ...
-    </h2>
+      <h1
+        class={css({
+          fontSize: "9xl",
+          display: "flex",
+          gap: "2",
+          lineHeight: "none",
+          fontWeight: "black",
+        })}
+      >
+        Thallk
+        <span class={css({ color: "primary" })}>.</span>
+      </h1>
+      <h2
+        class={css({
+          fontSize: "3xl",
+          maxW: "md",
+          lineHeight: "none",
+          wordBreak: "break-word",
+          lineClamp: 2,
+        })}
+      >
+        Let’s thallk about metal music and more ...
+      </h2>
+    </Box>
     <p class={css({ fontWeight: 800, color: "primary" })}>Posts</p>
     <ul>
       {
@@ -45,5 +51,5 @@ const posts = await getCollection("posts");
         ))
       }
     </ul>
-  </Box>
+  </Container>
 </Layout>
