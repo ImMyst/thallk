@@ -24,7 +24,6 @@ const featuredPost = posts.find((post) => post.data.tags.includes("featured"));
           fontSize: "9xl",
           display: "flex",
           gap: "2",
-          lineHeight: "none",
           fontWeight: "black",
         })}
       >
@@ -35,7 +34,7 @@ const featuredPost = posts.find((post) => post.data.tags.includes("featured"));
         class={css({
           fontSize: "3xl",
           maxW: "md",
-          lineHeight: "none",
+          lineHeight: 'none',
           wordBreak: "break-word",
           lineClamp: 2,
         })}
