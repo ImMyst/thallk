@@ -4,9 +4,9 @@
   "license": "MIT",
   "dependencies": {
     "@astrojs/markdoc": "^0.8.0",
-    "@keystatic/astro": "^2.0.0",
-    "@keystatic/core": "^0.2.4",
-    "astro": "^3.0.3"
+    "@keystatic/astro": "^2.0.3",
+    "@keystatic/core": "^0.2.6",
+    "astro": "^4.0.3"
   },
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
