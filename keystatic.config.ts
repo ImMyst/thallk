@@ -1,11 +1,13 @@
 import { config } from "@keystatic/core";
-import { post } from "./src/collections/post";
+import { posts } from "./src/collections/posts";
+import { tags } from "./src/collections/tags";
 
 export default config({
   storage: {
     kind: "local",
   },
   collections: {
-    posts: post,
+    posts,
+    tags,
   },
 });
