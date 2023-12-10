@@ -7,7 +7,14 @@ export const posts = collection({
   format: { contentField: "content" },
   schema: {
     title: fields.slug({ name: { label: "Title" } }),
-    image: fields.image({ label: "Image cover" }),
+    image: fields.image({
+      label: "Image cover",
+      directory: "src/content/posts",
+      publicPath: "../../content/posts/",
+    }),
+    published_at: fields.date({
+      label: "Date de publication",
+    }),
     tags: fields.array(
       fields.relationship({
         collection: "tags",

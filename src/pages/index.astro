@@ -1,10 +1,18 @@
 ---
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import { getCollection } from "astro:content";
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
 import { css } from "../../styled-system/css";
 import { Box } from "../../styled-system/jsx";
 import FeaturedPost from "../components/FeaturedPost.astro";
+
+dayjs.extend(relativeTime);
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 const posts = await getCollection("posts");
 const featuredPost = posts.find((post) => post.data.tags.includes("featured"));

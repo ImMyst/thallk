@@ -1,4 +1,5 @@
 ---
+import dayjs from "dayjs";
 import { Box } from "../../styled-system/jsx";
 import { css } from "../../styled-system/css";
 import { capitalize } from "../utils/capitalize";
@@ -56,4 +57,25 @@ const { post } = Astro.props;
   <Tag>
     {capitalize(post?.data.tags.find((tag) => tag.includes("featured")))}
   </Tag>
+  <Box
+    className={css({
+      display: "flex",
+      pos: "absolute",
+      right: 3,
+      bottom: 3,
+      justifyItems: "end",
+      alignItems: "end",
+    })}
+  >
+    <p
+      class={css({
+        fontSize: "0.65rem",
+        md: {
+          fontSize: "0.75rem",
+        },
+      })}
+    >
+      {dayjs(post?.data.published_at).format("DD/MM/YYYY")}
+    </p>
+  </Box>
 </Box>
