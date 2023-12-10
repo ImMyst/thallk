@@ -34,7 +34,7 @@ const featuredPost = posts.find((post) => post.data.tags.includes("featured"));
         class={css({
           fontSize: "3xl",
           maxW: "md",
-          lineHeight: 'none',
+          lineHeight: "none",
           wordBreak: "break-word",
           lineClamp: 2,
         })}
@@ -44,6 +44,11 @@ const featuredPost = posts.find((post) => post.data.tags.includes("featured"));
       <Box
         className={css({
           pt: "14",
+          display: "flex",
+          m: "auto",
+          w: "5/6",
+          alignItems: "center",
+          justifyContent: "center",
         })}
       >
         <a href={`/posts/${featuredPost?.slug}`}>

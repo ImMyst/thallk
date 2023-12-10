@@ -4,6 +4,7 @@ import { css } from "../../styled-system/css";
 import { capitalize } from "../utils/capitalize";
 import Tag from "./Tag.astro";
 import type { Post } from "../content/config";
+import { Image } from "astro:assets";
 
 interface Props {
   post?: Post;
@@ -16,7 +17,7 @@ const { post } = Astro.props;
   className={css({
     display: "flex",
     pos: "relative",
-    minW: "1/6",
+    // minW: "1/6",
     _hover: {
       bg: "post-background-hover",
     },
@@ -25,10 +26,29 @@ const { post } = Astro.props;
     p: "4",
   })}
 >
+  <Box
+    className={css({
+      pr: "20px",
+    })}
+  >
+    <Image
+      class={css({
+        w: "100px",
+        md: {
+          w: "120px",
+        },
+      })}
+      src={post?.data.image!}
+      alt="lala"
+    />
+  </Box>
   <h3
     class={css({
-      fontSize: "2xl",
-      maxW: "4/6",
+      fontSize: "xl",
+      md: {
+        fontSize: "2xl",
+      },
+      maxW: "7/12",
     })}
   >
     {post?.data.title}
